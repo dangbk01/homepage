@@ -1,0 +1,181 @@
+.blue {
+  color: #1c375d;
+}
+.btn-back-to-list{background-color: #1c375d;color: white;}
+.btn-back-to-list:hover{background-color:#0c6f22;color:#fff}
+.backgr-black{
+	background-color: black;
+  }
+  .img-opacity {
+    opacity: 0.6;
+    }
+.mar-bot-1{
+  margin-bottom: 1rem;
+}
+.pad-left{
+  padding-left: 0.5rem;
+}
+.pad-right{
+  padding-right: 0.5rem;
+}
+.text {
+	color: #fff;
+	font-size: 4rem;
+	font-weight: bold;
+	position: absolute;
+	margin-top: 10%;
+	left: 20%;
+	z-index: 1;
+}
+.hover-zoomin {
+  width: 100%;
+	overflow: hidden; 
+	position: relative;
+	text-align:center;
+}
+.hover-zoomin img {
+  width: 100%;
+	transition: transform 0.8s ease;
+}
+
+.hover-zoomin:hover img {
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);;
+}
+
+
+.slide-up {
+  
+  /*transform: translateY(100px);*/
+  transform: translate3d(0, 220px, 0);
+  /* added translateY position to module to prevent the module loading at 0 then jumping down before sliding up (on mobile) */
+  /* replaced translateY with translate3d for iOS hardware-acceleration*/
+}
+
+.come-in {
+  /*transform: translateY(100px);*/
+  transform: translate3d(0, 220px, 0);
+  animation: come-in 0.8s ease forwards;
+}
+
+
+.already-visible {
+  /*transform: translateY(0);*/
+  transform: translate3d(0, 0, 0);
+  animation: none;
+}
+
+@keyframes come-in {
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+.color-img {
+  background-color: black;
+}
+.color-img-opacity {
+  opacity: 0.55;
+}
+  /*large image*/
+  .title-services{
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: -50%;
+    transform: translate(-50%, -50%);
+  }
+  .name-services {
+    font-size: 1.15em;
+    font-weight: bold;
+    }
+  .service-description {
+    font-size: 26px;
+  }
+  /*small image*/
+  .name-services-01 {
+    font-size: 26px;
+    font-weight: bold;
+    }
+  .service-description-01 {
+    font-size: 16px;
+    text-decoration: underline;
+  }
+
+@media only screen and (min-width: 1200px) {
+
+}
+
+@media only screen and (min-width: 1601px) {
+
+}
+
+@media only screen and (max-width: 1600px) {
+
+}
+@media only screen and (max-width: 1280px) {    /*Macboo Pro*/
+  .text {
+    font-size: 3rem;
+    left: 15%;
+    }
+}
+@media only screen and (max-width: 1201px) {
+
+}
+@media only screen and (max-width: 1024px) {
+
+}
+@media only screen and (max-width: 991px) {
+  .name-services {
+    font-size: 1em;
+    }
+  .service-description {
+    font-size: 18px;
+  }
+  .name-services-01 {
+    font-size: 18px;
+    }
+  .service-description-01 {
+    font-size: 13px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .name-services {
+    font-size: 0.95em;
+    }
+  .service-description {
+    font-size: 16px;
+  }
+  .title-services{
+   
+  }
+  .text {
+    font-size: 2rem;
+    left: 5%;
+    }
+}
+@media only screen and (max-width: 567px) {
+  .text {
+    font-size: 1.5rem;
+    }
+  .pad-left{
+    padding-left: 15px;
+  }
+  .pad-right{
+    padding-right: 15px;
+  }
+  .title-services{
+    
+  }
+  .name-services {
+    font-size: 0.9em;
+    }
+  .service-description {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 428px) {
+
+}
+
