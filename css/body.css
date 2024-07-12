@@ -1,0 +1,103 @@
+@font-face {
+  src: url("../Fonts/Roboto-Regular.ttf");
+  font-family: roBo-r;
+  font-weight: 400;
+}
+@font-face {
+  src: url("../Fonts/Roboto-Bold.ttf");
+  font-family: roBo-b;
+  font-weight: 700;
+}
+@font-face {
+  src: url("../Fonts/Roboto-Medium.ttf");
+  font-family: roBo-md;
+  font-weight: 500;
+}
+body, input, button, textarea {
+  font-family: roBo-r;
+}
+@media (max-width: 991px) {
+  body, input, button, textarea {
+    font-size: 13px;
+  }
+}
+
+p, h1, h2, h3, h4, h5, h6, label {
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
+}
+
+.reset-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #0F663B;
+}
+
+.row {
+  padding: 12px;
+}
+
+.form-label {
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.j-end {
+  justify-content: flex-end;
+}
+
+.j-start {
+  justify-content: flex-start;
+}
+
+.j-center {
+  justify-content: center;
+}
+
+body, p, h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 0;
+}
+
+ol, ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+tbody .sticky-col {
+  left: 0;
+}
+
+.sticky-col {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+}
+
+.sticky-col + .sticky-col {
+  left: 40px;
+}
+
+.sticky-col + .sticky-col + .sticky-col {
+  left: 104px;
+}
+
+.sticky-col + .sticky-col + .sticky-col + .sticky-col {
+  left: 174px;
+}/*# sourceMappingURL=body.css.map */

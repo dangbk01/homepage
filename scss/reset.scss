@@ -1,0 +1,23 @@
+@import 'variable';
+p, h1, h2, h3, h4, h5, h6, label{
+    padding: 0;
+    margin: 0;
+    font-weight: normal;
+}
+.reset-list{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: $secondarycolor;
+}
+.row{
+    padding: 12px;
+}
+.form-label{
+    padding: 0;
+    margin: 0;
+    font-weight: normal;
+}

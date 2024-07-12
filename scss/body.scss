@@ -1,0 +1,26 @@
+@import 'variable';
+@import 'fontbase';
+@import 'mixin';
+@import 'reset';
+@import 'flex';
+
+tbody .sticky-col {
+  left: 0;
+}
+
+.sticky-col {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+}
+.sticky-col+.sticky-col {
+  left: 40px;
+}
+
+.sticky-col+.sticky-col+.sticky-col {
+  left: 104px;
+}
+
+.sticky-col+.sticky-col+.sticky-col+.sticky-col {
+  left: 174px;
+}

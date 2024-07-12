@@ -1,0 +1,176 @@
+@import 'variable';
+@import 'fontbase';
+@import 'mixin';
+@import 'reset';
+@import 'flex';
+
+//Limited max-width in body
+body {
+    max-height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.header1,
+.search {
+    flex-shrink: 0;
+}
+
+.table-container {
+    margin-top: 20px;
+    transition: margin-top 0.5s ease;
+    overflow: auto;
+    max-height: 700px;
+    flex-grow: 1;
+    padding-bottom: 10px;
+    display: block;
+    table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        margin-bottom: 10px;
+
+        th,
+        td {
+            border: 1px solid $whitecolor;
+            white-space: nowrap;
+            padding: 8px;
+            border-spacing: 0;
+            z-index: 1;
+        }
+
+        thead {
+            position: sticky;
+            top: 0;
+            color: $whitecolor;
+            z-index: 3;
+            
+            tr {
+                th {
+                    white-space: nowrap;
+                    min-width: 65px;
+                    font-weight: normal;
+                    background-color: $secondarycolor;
+                    font-size: 15px;
+                    text-transform: uppercase;
+                    color: $whitecolor;
+                    font-family: roBo-r;
+                    text-align: center;
+                    vertical-align: middle;
+                    z-index: 2;
+                    
+                }
+            }
+
+        }
+
+        tbody {
+            background-color: $whitecolor;
+            tr {
+                td {
+                    font-weight: normal;
+                    font-size: 14px;
+                    color: $textcolor;
+                    font-family: roBo-r;
+                    text-align: center;
+                    vertical-align: middle;
+                }
+            }
+        }
+
+    }
+}
+
+th.sticky-col,
+td.td-sticky-col {
+    position: sticky;
+    left: 0;
+    z-index: 3;
+    border: 1px solid $whitecolor;
+    
+}
+
+/* Đổi màu cho 4 cột đầu khi scroll */
+.table-container.scrolled tr:nth-child(odd) .td-sticky-col{
+    //background-color: rgba(15, 102, 59, 0.05);
+    background-color:  #fafafa;
+}
+.table-container.scrolled tr:nth-child(even) .td-sticky-col {
+    //background-color: rgba(15, 102, 59, 0.15);
+    background-color: #ddece5;
+}
+.table-container.scrolled tr:hover .td-sticky-col {
+    // background-color: $primarycolor;
+    // color: #fff !important;
+    background-color:#97c9b0; 
+    color: $whitecolor!important;
+}
+.my-table {
+    .sticky-thead {
+        tr {
+            th {
+                .icon{
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+}
+/* Custom scrollbar */
+.table-container::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.table-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+tbody tr:nth-child(odd) {
+    //background-color: rgba(15, 102, 59, 0.05);
+    background-color:  #fafafa;
+}
+
+/* Màu nền cho dòng chẵn */
+tbody tr:nth-child(even) {
+    //background-color: rgba(15, 102, 59, 0.15);
+    background-color: #ddece5;
+    //background-color: #e1efe8;
+}
+tr:hover td {
+    //background-color: rgba(15, 102, 59, 0.3);
+    background-color:#97c9b0; 
+    color: $whitecolor!important;
+    
+}
+//test1 cho hien thị màu 
+tbody{
+    tr{
+        .test1{
+            background-color:#FFFFE0 ;
+            color: $textcolor!important;
+        }
+    }
+}
+@include respond(sm) {
+    .table-container{
+        display: none;
+    }
+}

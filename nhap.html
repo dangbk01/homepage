@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base href="https://demos.telerik.com/kendo-ui/datetimepicker/adaptive-mode?autoRun=true&theme=default-purple">
+    
+    <style>
+        html {
+            font-size: 14px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+    <title></title>
+    <link href="https://kendo.cdn.telerik.com/themes/8.0.1/default/default-main.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/all.css">
+    <link href="https://kendo.cdn.telerik.com/themes/8.0.1/default/default-main.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+    <script src="https://kendo.cdn.telerik.com/2024.2.514/js/kendo.all.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2024.2.514/js/kendo.all.min.js"></script>
+
+</head>
+<style>
+    html,
+    body * {
+        scrollbar-color: #c4c4c4 transparent;
+        scrollbar-width: thin;
+    }
+
+    .k-datetimepicker {
+        max-width: 166px;
+        min-height: 30px;
+        font-size: 14px;
+    }
+
+    /* .note {
+    font: normal 18px "Metric";
+    border-radius: 2px;
+    margin: 20px auto 40px auto;
+    padding: 20px;
+    border-left: 4px solid;
+    border-left-color: #5392e4;
+    background: rgba(83,146,228,0.1);
+    text-align: center;
+} */
+    .k-button-solid-base.k-selected {
+        border-color: #1A365E;
+        background-color: #1A365E;
+    }
+
+    .k-calendar-header .k-title,
+    .k-calendar-header .k-calendar-title {
+        font-weight: bold;
+    }
+
+    .k-calendar-title .k-button-text {
+        color: #36383C;
+    }
+
+    .k-button-flat-primary {
+        color: #1A365E;
+        font-weight: bold;
+    }
+
+    .k-button-solid-primary {
+        border-color: #1A365E;
+        background-color: #1A365E;
+    }
+
+    .k-calendar .k-calendar-td.k-selected .k-calendar-cell-inner,
+    .k-calendar .k-calendar-td.k-selected .k-link {
+        background-color: #1A365E;
+    }
+
+    .k-time-header .k-time-now,
+    .k-time-selector-header .k-time-now {
+        color: #1A365E;
+
+    }
+
+    .k-time-header .k-time-now .k-button-text {
+        position: relative;
+        color: transparent;
+    }
+
+    .k-time-header .k-time-now .k-button-text::before {
+        content: "NOW";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: #1A365E;
+    }
+
+    .k-content {
+        border-color: rgba(0, 0, 0, 0.08);
+        color: #424242;
+        background-color: transparent;
+    }
+
+    .k-time-container {
+        background: transparent;
+    }
+
+    .k-calendar .k-calendar-view .k-today {
+        color: #1A365E;
+    }
+
+    .k-time-list .k-item:hover {
+        color: #1A365E;
+    }
+
+    .k-calendar .k-calendar-td.k-selected.k-hover .k-link {
+        background-color: #1A365E;
+    }
+
+    .k-time-accept:hover {
+        background-color: #1A365E;
+        border: 1px solid #1A365E;
+    }
+
+
+    /* sfjjgvuhrtiud */
+    /* Reset some default styles */
+    body,
+    html {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .table-container {
+        width: 100%;
+        overflow-x: auto;
+        margin-top: 20px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th,
+    td {
+        padding: 12px 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    thead {
+        background-color: #f2f2f2;
+    }
+
+    /* Màu nền cho dòng lẻ */
+    tbody tr:nth-child(odd) {
+        background-color: #f9f9f9;
+    }
+
+    /* Màu nền cho dòng chẵn */
+    tbody tr:nth-child(even) {
+        background-color: #e6e6e6;
+    }
+
+    tr:hover td {
+        background-color: #ccc;
+    }
+
+    /* Popup styles */
+    .popup-container {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 400px;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+    }
+
+    .popup-content {
+        background-color: #fff;
+        width: 400px;
+        height: 100%;
+        overflow-y: auto;
+        position: absolute;
+        top: 0;
+        right: -400px;
+        transition: right 0.3s ease;
+        padding: 20px;
+    }
+
+    .popup-content .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .popup-content .close:hover,
+    .popup-content .close:focus {
+        color: black;
+        text-decoration: none;
+    }
+
+    .popup-content p {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+</style>
+
+<body>
+
+
+    <div class="k-d-flex k-justify-content-center" style="padding-top: 54px;">
+        <div class="k-w-300">
+            <!-- <label for="datetimepicker">Select date/time</label> -->
+            <input id="datetimepicker" />
+        </div>
+    </div>
+
+
+    <div class="col-xxl-5 checkbox">
+        <div class="row row-1">
+            <div class="checkbox-container">
+                <input type="checkbox" id="checkbox1">
+                <label for="checkbox1">
+                    <p>My flight</p>
+                </label>
+            </div>
+            <div class="checkbox-container">
+                <input type="checkbox" id="checkbox2">
+                <label for="checkbox2">
+                    <p>Filter Mode On</p>
+                </label>
+            </div>
+        </div>
+        <div class="row row-2">
+            <div class="checkbox-container">
+                <input type="checkbox" id="checkbox4">
+                <label for="checkbox4">
+                    <p>View only turn-round flights</p>
+                </label>
+                <i class="fa-solid fa-filter"></i>
+            </div>
+            <div class="checkbox-container">
+                <input type="checkbox" id="checkbox5">
+                <label for="checkbox5">
+                    <p>Hide departed flights</p>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Booking <i class="fa-solid fa-filter icon"></i></th>
+                    <th>Header 2</th>
+                    <th>Header 3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Row 1 Data 1</td>
+                    <td>Row 1 Data 2</td>
+                    <td>Row 1 Data 3</td>
+                </tr>
+                <tr>
+                    <td>Row 2 Data 1</td>
+                    <td>Row 2 Data 2</td>
+                    <td>Row 2 Data 3</td>
+                </tr>
+                <tr>
+                    <td>Row 3 Data 1</td>
+                    <td>Row 3 Data 2</td>
+                    <td>Row 3 Data 3</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="popup-container" id="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <p>Popup Content Goes Here</p>
+        </div>
+    </div>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#datetimepicker").kendoDateTimePicker({
+                adaptiveMode: "auto",
+                componentType: "modern",
+                timeFormat: "HH:mm",
+                format: "dd MMM yyyy HH:mm",
+                start: "year",
+                interval: 15,
+                value: new Date()
+
+            });
+            $("#dropDownList").kendoDropDownList({
+                dataSource: ["modern", "classic"],
+                value: "modern",
+                change: function (e) {
+                    var picker = $("#datetimepicker").data("kendoDateTimePicker");
+                    var type = this.value();
+                    var value = picker.value();
+                    var parent = $("#datetimepicker").parent();
+
+                    picker.destroy();
+                    parent.empty();
+                    parent.append('<input id="datetimepicker" title="datetimepicker" style="width: 100%;" />')
+
+                    $("#datetimepicker").kendoDateTimePicker({
+                        componentType: type,
+                        value: value
+                    });
+                }
+            }); ư
+            // $('#checkbox2').change(function () {
+            //     if (this.checked) {
+            //         $('.icon').show();
+            //     } else {
+            //         $('.icon').hide();
+            //     }
+            // });
+        });
+
+    </script>
+</body>
+
+</html>

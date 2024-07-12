@@ -1,0 +1,23 @@
+@font-face {
+  src: url("../Fonts/Roboto-Regular.ttf");
+  font-family: roBo-r;
+  font-weight: 400;
+}
+@font-face {
+  src: url("../Fonts/Roboto-Bold.ttf");
+  font-family: roBo-b;
+  font-weight: 700;
+}
+@font-face {
+  src: url("../Fonts/Roboto-Medium.ttf");
+  font-family: roBo-md;
+  font-weight: 500;
+}
+body, input, button, textarea {
+  font-family: roBo-r;
+}
+@media (max-width: 991px) {
+  body, input, button, textarea {
+    font-size: 13px;
+  }
+}/*# sourceMappingURL=fontbase.css.map */

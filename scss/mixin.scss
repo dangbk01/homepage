@@ -1,0 +1,43 @@
+@mixin respond($bp)
+{
+    @if($bp==xl){
+        @media (max-width:1399px){
+            @content 
+        }
+    }
+    @if($bp==lg){
+        @media (max-width:1199px){
+            @content;
+        }
+    }
+    @if($bp==md){
+        @media (max-width:991px){
+            @content 
+        }
+    }
+    @if($bp==sm){
+        @media (max-width:767px){
+            @content;
+        }
+    }
+    @if($bp==xs){
+        @media (max-width:575px){
+            @content 
+        }
+    }
+    @if($bp==custom){
+        @media (max-width: 435px) {
+            @content;
+        }
+    }
+    @if($bp==supersmall){
+        @media (max-width: 320px) {
+            @content;
+        }
+    }
+    @if($bp==supersmallv){
+        @media (max-width: 230px) {
+            @content;
+        }
+    }
+}
